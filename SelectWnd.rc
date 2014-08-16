@@ -1,0 +1,60 @@
+////////////////////////////////////////////////////////////////////////////
+// SelectWnd.rc -- sample of window selector for Win32
+// This file is part of MZC3.  See file "ReadMe.txt" and "License.txt".
+////////////////////////////////////////////////////////////////////////////
+
+#include <windows.h>
+#include <dlgs.h>
+
+1       ICON      "MZC3.ico"	// as main icon
+1923    ICON      "null.ico"    // as MZC3_IDI_NULL
+1263    CURSOR    "aiming.cur"  // as MZC3_IDC_AIMING
+
+////////////////////////////////////////////////////////////////////////////
+// English
+
+LANGUAGE LANG_ENGLISH, SUBLANG_DEFAULT
+
+1 DIALOG 10, 10, 143, 97
+STYLE DS_CENTER | WS_MINIMIZEBOX | WS_VISIBLE | WS_DLGFRAME | WS_SYSMENU
+CAPTION "Select Window"
+FONT 9, "Arial"
+{
+    CONTROL "", stc1, STATIC, SS_ICON | WS_CHILD | WS_VISIBLE | WS_GROUP | 
+            SS_NOTIFY, 5, 5, 20, 20, WS_EX_CLIENTEDGE
+    CONTROL "", stc2, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 
+            30, 5, 105, 35
+    CONTROL "Please drag the icon onto the window to select.", stc3, 
+            STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 
+            5, 50, 135, 20
+    CONTROL "OK", IDOK, BUTTON, BS_DEFPUSHBUTTON | WS_CHILD | WS_VISIBLE | 
+            WS_TABSTOP, 25, 75, 55, 16
+    CONTROL "Cancel", psh1, BUTTON, BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | 
+            WS_TABSTOP, 85, 75, 55, 16
+}
+
+////////////////////////////////////////////////////////////////////////////
+// Japanese, Shift_JIS
+
+LANGUAGE LANG_JAPANESE, SUBLANG_DEFAULT
+
+1 DIALOG 10, 10, 143, 97
+STYLE DS_CENTER | WS_MINIMIZEBOX | WS_VISIBLE | WS_DLGFRAME | WS_SYSMENU
+CAPTION "ウィンドウの選択"
+FONT 9, "ＭＳ Ｐゴシック"
+{
+    
+    CONTROL "", stc1, STATIC, SS_ICON | WS_CHILD | WS_VISIBLE | WS_GROUP | 
+            SS_NOTIFY, 5, 5, 20, 20, WS_EX_CLIENTEDGE
+    CONTROL "", stc2, STATIC, SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 
+            30, 5, 105, 35
+    CONTROL "選択したいウィンドウまで左上のアイコンをドラッグしてください。", 
+            stc3, STATIC,  SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 
+            5, 50, 135, 20
+    CONTROL "OK", IDOK, BUTTON, BS_DEFPUSHBUTTON | WS_CHILD | WS_VISIBLE | 
+            WS_TABSTOP, 25, 75, 55, 16
+    CONTROL "キャンセル", psh1, BUTTON, BS_PUSHBUTTON | WS_CHILD | 
+            WS_VISIBLE | WS_TABSTOP, 85, 75, 55, 16
+}
+
+////////////////////////////////////////////////////////////////////////////
